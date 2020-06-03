@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { ALL_IMAGES, ALL_BREEDS, FILTER } from '../actions';
-import Breed from '../component/Breed';
+import Image from '../component/Image';
 
 const mapStateToProps = state => ({
   breed: state.breedReducer,
@@ -16,30 +16,32 @@ const mapDispatchToProps = dispatch => ({
   filterInput: string => dispatch(FILTER(string)),
 });
 
-const DogList = ({
-  showbreed, breed,
-}) => {
+const DogContainer = props => {
+  const {
+    match, showimage, image,
+  } = props;
+  const { name } = match.params;
   useEffect(() => {
-    fetch('https://dog.ceo/api/breeds/list/all')
+    fetch(`https://dog.ceo/api/breed/${name}/images`)
       .then(response => response.json())
       .then(data => {
         const { message } = data;
-        const breeds = Object.keys(message);
-        showbreed(breeds);
+        showimage(message);
       });
-  }, [showbreed]);
+  }, [showimage, name]);
 
   return (
     <div>
-      <Breed names={breed} />
+      {image.map(url => <Image key={url} image={url} />)}
     </div>
   );
 };
 
-DogList.propTypes = {
-  showbreed: PropTypes.func.isRequired,
-  breed: PropTypes.arrayOf.isRequired,
+DogContainer.propTypes = {
+  image: PropTypes.arrayOf.isRequired,
+  match: PropTypes.objectOf.isRequired,
+  showimage: PropTypes.func.isRequired,
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(DogList);
+export default connect(mapStateToProps, mapDispatchToProps)(DogContainer);

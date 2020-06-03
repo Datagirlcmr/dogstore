@@ -13,4 +13,27 @@ const FILTER = filter => ({
   filter,
 });
 
-export { ALL_BREEDS, ALL_IMAGES, FILTER };
+// function fetchBreeds() {
+//   return dispatch => {
+//     // dispatch(fetchProductsPending());
+//     fetch('https://dog.ceo/api/breeds/list/all')
+//       .then(res => res.json())
+//       .then(res => {
+//         if (res.error) {
+//           throw (res.error);
+//         }
+//         const { message } = res;
+//         const breeds = Object.keys(message);
+//         // dispatch(fetchProductsSuccess(res.products);
+//         console.log(breeds);
+//         return breeds;
+//       })
+//       .catch(error => {
+//         // dispatch(fetchProductsError(error));
+//       });
+//   };
+// }
+
+export {
+  ALL_BREEDS, ALL_IMAGES, FILTER,
+};

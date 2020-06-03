@@ -2,12 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Image = ({ image }) => (
-  <div>
-    {image.map(url => (
-      <img src={url} key={url} alt={url} />
-    ))}
-  </div>
-
+  <img src={image} alt={image} />
 );
 
 Image.propTypes = {

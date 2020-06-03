@@ -1,19 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-const Breed = ({ breed }) => (
-  <div className="select">
-    <select className="card">
-      <option value="All">Select a Breed</option>
-      {breed.map(el => (
-        <option key={el} value={el}>{el}</option>
-      ))}
-    </select>
+const Breed = ({ names }) => (
+  <div className="f-wrap">
+    {names.map(name => (
+      <div className="card" key={name}>
+        {' '}
+        <Link to={`/categories/${name}`}>
+          {name}
+        </Link>
+
+        {' '}
+      </div>
+    ))}
   </div>
+
 );
 
 Breed.propTypes = {
-  breed: PropTypes.string.isRequired,
+  names: PropTypes.arrayOf.isRequired,
 };
 
 export default Breed;
