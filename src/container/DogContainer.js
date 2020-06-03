@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { ALL_IMAGES, ALL_BREEDS, FILTER } from '../actions';
-import Dog from '../component/Dog';
+import Breed from '../component/Breed';
+import Image from '../component/Image';
 
 const mapStateToProps = state => ({
   breed: state.breedReducer,
@@ -27,12 +28,21 @@ const DogList = ({
         const { message } = data;
         const breeds = Object.keys(message);
         showbreed(breeds);
+        breeds.forEach(breed => fetch(`https://dog.ceo/api/breed/${breed}/images`)
+          .then(response => response.json())
+          .then(data => {
+            const { message } = data;
+            showimage(message);
+          }));
       });
-  }, [showbreed]);
+  }, [showbreed, showimage]);
+
 
   return (
     <div>
-      <Dog breed={breed} />
+      <Breed breed={breed} />
+      <Image image={image} />
+      {/* {console.log(image)} */}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Dog = ({ breed }) => (
+const Breed = ({ breed }) => (
   <div className="select">
     <select className="card">
       <option value="All">Select a Breed</option>
@@ -12,8 +12,8 @@ const Dog = ({ breed }) => (
   </div>
 );
 
-Dog.propTypes = {
+Breed.propTypes = {
   breed: PropTypes.string.isRequired,
 };
 
-export default Dog;
+export default Breed;
