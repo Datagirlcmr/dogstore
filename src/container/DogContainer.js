@@ -16,9 +16,7 @@ const mapDispatchToProps = dispatch => ({
   filterInput: string => dispatch(FILTER(string)),
 });
 
-const DogList = ({
-  showbreed, breed,
-}) => {
+const DogList = ({ showbreed, breed }) => {
   useEffect(() => {
     fetch('https://dog.ceo/api/breeds/list/all')
       .then(response => response.json())
@@ -40,6 +38,5 @@ DogList.propTypes = {
   showbreed: PropTypes.func.isRequired,
   breed: PropTypes.arrayOf.isRequired,
 };
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(DogList);

@@ -1,19 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Breed = ({ breed }) => (
+const Filter = ({ filter }) => (
   <div className="select">
     <select className="card">
       <option value="All">Select a Breed</option>
-      {breed.map(el => (
+      {filter.map(el => (
         <option key={el} value={el}>{el}</option>
       ))}
     </select>
   </div>
 );
 
-Breed.propTypes = {
-  breed: PropTypes.string.isRequired,
+Filter.propTypes = {
+  filter: PropTypes.arrayOf.isRequired,
 };
 
-export default Breed;
+export default Filter;

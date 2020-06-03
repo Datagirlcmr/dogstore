@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import Navbar from './Navbar';
 import DogList from '../container/DogContainer';
-import DogDetails from '../container/DogDisplay';
+import FilterContainer from '../container/FilterContainer';
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
       <Navbar />
       <Switch>
         <Route path="/" exact component={DogList} />
-        <Route path="/categories/:name" component={DogDetails} />
+        <Route path="/categories/" component={FilterContainer} />
       </Switch>
     </div>
   );
