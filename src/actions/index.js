@@ -1,6 +1,11 @@
-const ALL_DOGS = breed => ({
-  type: 'ALL_DOGS',
+const ALL_BREEDS = breed => ({
+  type: 'ALL_BREEDS',
   breed,
+});
+
+const ALL_IMAGES = image => ({
+  type: 'ALL_IMAGES',
+  image,
 });
 
 const FILTER = filter => ({
@@ -8,4 +13,4 @@ const FILTER = filter => ({
   filter,
 });
 
-export { ALL_DOGS, FILTER };
+export { ALL_BREEDS, ALL_IMAGES, FILTER };

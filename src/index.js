@@ -4,10 +4,11 @@ import './index.css';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import App from './component/App';
-import reducer from './reducers';
+import rootReducer from './reducers/index';
+// import ALL_DOGS from './actions';
 
-const store = createStore(reducer);
-
+const store = createStore(rootReducer,
+  window.devToolsExtension && window.devToolsExtension());
 
 ReactDOM.render(
   <Provider store={store}>
