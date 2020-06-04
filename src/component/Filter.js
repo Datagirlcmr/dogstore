@@ -13,7 +13,7 @@ const Filter = ({ filter }) => (
 );
 
 Filter.propTypes = {
-  filter: PropTypes.arrayOf.isRequired,
+  filter: PropTypes.func.isRequired,
 };
 
 export default Filter;

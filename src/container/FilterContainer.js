@@ -36,7 +36,7 @@ const FilterContainer = ({ filterInput, filter }) => {
 
 FilterContainer.propTypes = {
   filterInput: PropTypes.func.isRequired,
-  filter: PropTypes.arrayOf.isRequired,
+  filter: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(FilterContainer);

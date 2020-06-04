@@ -36,7 +36,7 @@ const DogList = ({ showbreed, breed }) => {
 
 DogList.propTypes = {
   showbreed: PropTypes.func.isRequired,
-  breed: PropTypes.arrayOf.isRequired,
+  breed: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(DogList);

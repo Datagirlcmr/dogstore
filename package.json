@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "^4.5.0",
     "cra-template": "1.0.3",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
