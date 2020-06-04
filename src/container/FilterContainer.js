@@ -16,7 +16,9 @@ const mapDispatchToProps = dispatch => ({
   filterInput: string => dispatch(FILTER(string)),
 });
 
-const FilterContainer = ({ filterInput, filter }) => {
+const FilterContainer = props => {
+  const { filterInput, filter } = props;
+
   useEffect(() => {
     fetch('https://dog.ceo/api/breeds/list/all')
       .then(response => response.json())

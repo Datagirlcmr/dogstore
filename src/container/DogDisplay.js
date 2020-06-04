@@ -38,8 +38,8 @@ const DogDisplay = props => {
 };
 
 DogDisplay.propTypes = {
-  image: PropTypes.arrayOf.isRequired,
-  match: PropTypes.objectOf.isRequired,
+  image: PropTypes.func.isRequired,
+  match: PropTypes.func.isRequired,
   showimage: PropTypes.func.isRequired,
 };
 

@@ -6,7 +6,7 @@ import {
 import Navbar from './Navbar';
 import DogList from '../container/DogContainer';
 import DogDisplay from '../container/DogDisplay';
-import FilterContainer from '../container/FilterContainer';
+// import FilterContainer from '../container/FilterContainer';
 
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
       <Switch>
         <Route path="/" exact component={DogList} />
         <Route path="/categories/:name" component={DogDisplay} />
-        <Route path="/categories" component={FilterContainer} />
+        {/* <Route path="/categories" component={FilterContainer} /> */}
       </Switch>
     </div>
   );

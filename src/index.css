@@ -17,6 +17,8 @@
   justify-content: space-around;
   background-color: #022e3d;
   color: #ffffff;
+  vertical-align: middle;
+  padding: 20px;
 }
 
 .nav-items {
@@ -32,4 +34,8 @@
   text-transform: uppercase;
   text-align: center;
   margin: 20px auto;
+}
+
+.clipt {
+  clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
 }

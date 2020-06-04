@@ -6,9 +6,9 @@ const Navbar = () => (
     <Link to="/">
       <h1 className="col-md-6 text-white">Dogstore</h1>
     </Link>
-    <Link to="/categories/">
+    {/* <Link to="/categories/">
       <h3 className="nav-items">Select a breed</h3>
-    </Link>
+    </Link> */}
     <Link to="/">
       <h3 className="nav-items">Categories</h3>
     </Link>

@@ -23,7 +23,7 @@ const Breed = ({ names }) => (
 );
 
 Breed.propTypes = {
-  names: PropTypes.arrayOf.isRequired,
+  names: PropTypes.func.isRequired,
 };
 
 export default Breed;
