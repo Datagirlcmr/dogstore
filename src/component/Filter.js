@@ -101,10 +101,10 @@ const Filter = ({ onChange }) => {
 
   return (
     <div className="select">
-      <select onChange={onChange} className="">
-        <option value="All">Select a Breed</option>
+      <select onChange={onChange}>
+        <option className="option-sel" value="All">Select a Breed</option>
         {options.map(el => (
-          <option key={el} value={el}>{el}</option>
+          <option className="option-sel" key={el} value={el}>{el}</option>
         ))}
       </select>
     </div>
