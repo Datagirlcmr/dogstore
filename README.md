@@ -58,7 +58,7 @@ to get the deployment build of the code run `npm run build`
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/Datagirlcmr/dogstore/issues).
 
 ## Show your support
 
@@ -66,8 +66,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
+- [dog ceo api](https://dog.ceo/dog-api/)
 - Hat tip to anyone whose code was used
-- Inspiration
 - etc
 
 ## 📝 License
