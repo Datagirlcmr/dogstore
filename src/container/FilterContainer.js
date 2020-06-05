@@ -1,44 +1,59 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { ALL_IMAGES, ALL_BREEDS, FILTER } from '../actions';
-import Filter from '../component/Filter';
+// import React, { useEffect } from 'react';
+// import { connect } from 'react-redux';
+// import PropTypes from 'prop-types';
+// import { ALL_IMAGES, ALL_BREEDS, FILTER } from '../actions';
+// import Filter from '../component/Filter';
 
-const mapStateToProps = state => ({
-  breed: state.breedReducer,
-  image: state.imageReducer,
-  filter: state.filterReducer,
-});
+// const mapStateToProps = state => ({
+//   breed: state.breedReducer,
+//   image: state.imageReducer,
+//   filter: state.filterReducer,
+// });
 
-const mapDispatchToProps = dispatch => ({
-  showbreed: breed => dispatch(ALL_BREEDS(breed)),
-  showimage: image => dispatch(ALL_IMAGES(image)),
-  filterInput: string => dispatch(FILTER(string)),
-});
+// const mapDispatchToProps = dispatch => ({
+//   showbreed: breed => dispatch(ALL_BREEDS(breed)),
+//   showimage: image => dispatch(ALL_IMAGES(image)),
+//   filterInput: string => dispatch(FILTER(string)),
+// });
 
-const FilterContainer = props => {
-  const { filterInput, filter } = props;
+// const FilterContainer = props => {
+//   const {
+//     filterInput, filter, breed, showbreed,
+//   } = props;
 
-  useEffect(() => {
-    fetch('https://dog.ceo/api/breeds/list/all')
-      .then(response => response.json())
-      .then(data => {
-        const { message } = data;
-        const breeds = Object.keys(message);
-        filterInput(breeds);
-      });
-  }, [filterInput]);
+//   useEffect(() => {
+//     fetch('https://dog.ceo/api/breeds/list/all')
+//       .then(response => response.json())
+//       .then(data => {
+//         const { message } = data;
+//         const breeds = Object.keys(message);
+//         showbreed(breeds);
+//         breeds.forEach(breed => (
+//           fetch(`https://dog.ceo/api/breed/${breed}/images`)
+//             .then(response => response.json())
+//             .then(data => {
+//               const { message } = data;
 
-  return (
-    <div>
-      <Filter filter={filter} />
-    </div>
-  );
-};
+//               // images of dogs returned per category
 
-FilterContainer.propTypes = {
-  filterInput: PropTypes.func.isRequired,
-  filter: PropTypes.func.isRequired,
-};
+//               filterInput(message);
+//             })
+//         ));
+//       });
+//   }, [showbreed, filterInput]);
 
-export default connect(mapStateToProps, mapDispatchToProps)(FilterContainer);
+//   return (
+//     <div>
+//       <Filter breed={breed} filter={filter} />
+//     </div>
+//   );
+// };
+
+// FilterContainer.propTypes = {
+//   filterInput: PropTypes.func.isRequired,
+//   filter: PropTypes.func.isRequired,
+//   breed: PropTypes.func.isRequired,
+//   showbreed: PropTypes.func.isRequired,
+// };
+
+// export default connect(mapStateToProps, mapDispatchToProps)(FilterContainer);

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { ALL_IMAGES, ALL_BREEDS, FILTER } from '../actions';
+import { FILTER, fetchBreeds, fetchSingleBreed } from '../actions';
 import Image from '../component/Image';
 
 const mapStateToProps = state => ({
@@ -10,29 +10,24 @@ const mapStateToProps = state => ({
   filter: state.filterReducer,
 });
 
-const mapDispatchToProps = dispatch => ({
-  showbreed: breed => dispatch(ALL_BREEDS(breed)),
-  showimage: image => dispatch(ALL_IMAGES(image)),
-  filterInput: string => dispatch(FILTER(string)),
-});
+const mapDispatchToProps = {
+  filterInput: FILTER,
+  fetchBreeds,
+  fetchSingleBreed,
+};
 
 const DogDisplay = props => {
-  const {
-    match, showimage, image,
-  } = props;
+  const { match, image, fetchSingleBreed } = props;
   const { name } = match.params;
   useEffect(() => {
-    fetch(`https://dog.ceo/api/breed/${name}/images`)
-      .then(response => response.json())
-      .then(data => {
-        const { message } = data;
-        showimage(message);
-      });
-  }, [showimage, name]);
+    fetchSingleBreed(name);
+  }, [fetchSingleBreed, name]);
 
   return (
     <div>
-      {image.map(url => <Image key={url} image={url} />)}
+      {image.map(url => (
+        <Image key={url} image={url} />
+      ))}
     </div>
   );
 };
@@ -40,8 +35,7 @@ const DogDisplay = props => {
 DogDisplay.propTypes = {
   image: PropTypes.func.isRequired,
   match: PropTypes.func.isRequired,
-  showimage: PropTypes.func.isRequired,
+  fetchSingleBreed: PropTypes.func.isRequired,
 };
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(DogDisplay);

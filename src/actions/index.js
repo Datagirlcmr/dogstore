@@ -13,27 +13,32 @@ const FILTER = filter => ({
   filter,
 });
 
-// function fetchBreeds() {
-//   return dispatch => {
-//     // dispatch(fetchProductsPending());
-//     fetch('https://dog.ceo/api/breeds/list/all')
-//       .then(res => res.json())
-//       .then(res => {
-//         if (res.error) {
-//           throw (res.error);
-//         }
-//         const { message } = res;
-//         const breeds = Object.keys(message);
-//         // dispatch(fetchProductsSuccess(res.products);
-//         console.log(breeds);
-//         return breeds;
-//       })
-//       .catch(error => {
-//         // dispatch(fetchProductsError(error));
-//       });
-//   };
-// }
+
+function fetchBreeds() {
+  return dispatch => {
+    fetch('https://dog.ceo/api/breeds/list/all')
+      .then(response => response.json())
+      .then(data => {
+        const { message } = data;
+        const breeds = Object.keys(message);
+        dispatch(ALL_BREEDS(breeds));
+        return breeds;
+      });
+  };
+}
+
+function fetchSingleBreed(name) {
+  return dispatch => {
+    fetch(`https://dog.ceo/api/breed/${name}/images`)
+      .then(response => response.json())
+      .then(data => {
+        const { message } = data;
+        dispatch(ALL_IMAGES(message));
+        return message;
+      });
+  };
+}
 
 export {
-  ALL_BREEDS, ALL_IMAGES, FILTER,
+  ALL_BREEDS, ALL_IMAGES, FILTER, fetchBreeds, fetchSingleBreed,
 };

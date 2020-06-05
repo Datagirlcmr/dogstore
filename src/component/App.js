@@ -5,8 +5,7 @@ import {
 } from 'react-router-dom';
 import Navbar from './Navbar';
 import DogList from '../container/DogContainer';
-import DogDisplay from '../container/DogDisplay';
-// import FilterContainer from '../container/FilterContainer';
+import SelectBreed from '../container/FilterBreed';
 
 
 function App() {
@@ -15,8 +14,7 @@ function App() {
       <Navbar />
       <Switch>
         <Route path="/" exact component={DogList} />
-        <Route path="/categories/:name" component={DogDisplay} />
-        {/* <Route path="/categories" component={FilterContainer} /> */}
+        <Route path="/categories/:name" component={SelectBreed} />
       </Switch>
     </div>
   );
