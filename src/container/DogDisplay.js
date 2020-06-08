@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { FILTER, fetchBreeds, fetchSingleBreed } from '../actions';
+import { fetchBreeds, fetchSingleBreed } from '../actions';
 import Image from '../component/Image';
 
 const mapStateToProps = state => ({
@@ -11,7 +11,6 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  filterInput: FILTER,
   fetchBreeds,
   fetchSingleBreed,
 };

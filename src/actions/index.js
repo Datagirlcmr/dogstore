@@ -8,12 +8,6 @@ const ALL_IMAGES = image => ({
   image,
 });
 
-const FILTER = filter => ({
-  type: 'FILTER',
-  filter,
-});
-
-
 function fetchBreeds() {
   return dispatch => {
     fetch('https://dog.ceo/api/breeds/list/all')
@@ -40,5 +34,5 @@ function fetchSingleBreed(name) {
 }
 
 export {
-  ALL_BREEDS, ALL_IMAGES, FILTER, fetchBreeds, fetchSingleBreed,
+  ALL_BREEDS, ALL_IMAGES, fetchBreeds, fetchSingleBreed,
 };
