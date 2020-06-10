@@ -12,7 +12,7 @@
       "sourceType": "module"
     },
     "extends": ["react-app", "airbnb", "plugin:react/recommended"],
-    "plugins": ["react", "react-hooks"],
+    "plugins": ["react"],
     "rules": {
       "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
       "import/no-unresolved": "off",
