@@ -1,6 +1,14 @@
+const FETCH_BREEDS = () => ({
+  type: 'FETCH_BREEDS',
+});
+
 const ALL_BREEDS = breed => ({
   type: 'ALL_BREEDS',
   breed,
+});
+
+const FETCH_IMAGES = () => ({
+  type: 'FETCH_IMAGES',
 });
 
 const ALL_IMAGES = image => ({
@@ -10,6 +18,7 @@ const ALL_IMAGES = image => ({
 
 function fetchBreeds() {
   return dispatch => {
+    dispatch(FETCH_BREEDS());
     fetch('https://dog.ceo/api/breeds/list/all')
       .then(response => response.json())
       .then(data => {
@@ -23,6 +32,7 @@ function fetchBreeds() {
 
 function fetchSingleBreed(name) {
   return dispatch => {
+    dispatch(FETCH_IMAGES());
     fetch(`https://dog.ceo/api/breed/${name}/images`)
       .then(response => response.json())
       .then(data => {
