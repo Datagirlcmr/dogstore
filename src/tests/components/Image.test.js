@@ -3,11 +3,10 @@ import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import Image from '../../component/Image';
 
-const defaultTest = {
+const image = () => ({
   image: ['url1', 'url2'],
-};
+});
 
-const { image } = defaultTest;
 
 Enzyme.configure({ adapter: new Adapter() });
 const setup = () => {
