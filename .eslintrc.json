@@ -17,7 +17,7 @@
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "import/no-unresolved": "off",
     "no-shadow": "off",
-    "jsx-a11y/href-no-hash": [0],
+    "jsx-a11y/href-no-hash": "off",
     "arrow-parens": ["error", "as-needed"]
   }
 }
