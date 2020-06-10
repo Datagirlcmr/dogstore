@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Breed = ({ names }) => (
+
   <div className="container-fluid d-flex flex-wrap">
     <h1 className="blinky-text col-md-10">
       Click any breed to see dog pictures for that breed
