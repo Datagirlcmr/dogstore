@@ -1,14 +1,7 @@
-const defaultState = {
-  breed: [],
-};
-
-const breedReducer = (state = defaultState, action) => {
+const breedReducer = (state = [], action) => {
   switch (action.type) {
     case 'ALL_BREEDS':
-      return {
-        ...state,
-        breed: action.breed,
-      };
+      return action.breed;
 
     default:
       return state;

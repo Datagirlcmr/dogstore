@@ -1,15 +1,7 @@
-const defaultState = {
-  image: [],
-};
-
-const imageReducer = (state = defaultState, action) => {
+const imageReducer = (state = [], action) => {
   switch (action.type) {
     case 'ALL_IMAGES':
-      return {
-        ...state,
-        image: action.image,
-      };
-
+      return action.image;
     default:
       return state;
   }
