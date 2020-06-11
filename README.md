@@ -18,6 +18,8 @@ This is a simple application where the user can access all dog images within a s
 
 [Live Demo Link](https://dogstorebreed.herokuapp.com/)
 
+[Video Link](https://www.loom.com/share/8297f0e0cb584c148f11318ba9799783)
+
 ## Getting Started
 
 Here are the steps to follow in order to get this project on your local computer.
