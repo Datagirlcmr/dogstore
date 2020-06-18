@@ -1,10 +1,21 @@
 import React from 'react';
+import {
+  Switch,
+  Route,
+} from 'react-router-dom';
+import Navbar from './Navbar';
+import DogList from '../container/DogContainer';
+import SelectBreed from '../container/FilterBreed';
 
 
 function App() {
   return (
     <div className="App">
-      <h1>DogStore</h1>
+      <Navbar />
+      <Switch>
+        <Route path="/" exact component={DogList} />
+        <Route path="/categories/:name" component={SelectBreed} />
+      </Switch>
     </div>
   );
 }

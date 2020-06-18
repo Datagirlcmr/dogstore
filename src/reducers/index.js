@@ -1,11 +1,15 @@
-import { combineReducers } from 'redux';
-import dogReducer from './dog';
+import { combineReducers, createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import imageReducer from './image';
+import breedReducer from './breed';
 import filterReducer from './filter';
 
 
-const reducer = combineReducers({
-  dogs: dogReducer,
-  filter: filterReducer,
-});
+const rootReducer = combineReducers({ imageReducer, breedReducer, filterReducer });
 
-export default reducer;
+
+const middlewares = [thunk];
+
+const store = createStore(rootReducer, applyMiddleware(...middlewares));
+
+export default store;
